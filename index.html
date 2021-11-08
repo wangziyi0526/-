@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<!-- 毛玻璃效果 -->
+
+<body>
+  <div class="container">
+    <div class="content">
+      <p>backdrop-filter CSS 属性可以让你为一个元素后面区域添加图形效果（如模糊或颜色偏移）。 因为它适用于元素背后的所有元素，为了看到效果，必须使元素或其背景至少部分透明。</p>
+    </div>
+</body>
+<style>
+  html,
+  body {
+    height: 100%;
+    width: 100%;
+  }
+
+  body {
+    background-image: url('https://img1.baidu.com/it/u=129894630,1207271042&fm=26&fmt=auto');
+    background-position: center center;
+    background-size: cover;
+  }
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+  }
+
+  .content {
+    height: 50%;
+    max-width: 70%;
+    padding: 20px 40px;
+    /* 关键样式 */
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+  }
+
+  /* 关键样式，只有支持 backdrop-filter 属性的浏览器才应用以下的样式 */
+  @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+    .content {
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+      background-color: rgba(255, 255, 255, 0.5);
+    }
+  }
+</style>
+
+</html>
